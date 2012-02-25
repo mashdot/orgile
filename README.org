@@ -6,8 +6,8 @@
 * Orgile
 Orgile is an Emacs Org-mode file parser and publishing tool, which uses classOrgile a rough Org-Mode file to HTML parser.
 
-| classOrgile.php | Version 20110918 | The rough Emacs Org-Mode (.org) file to HTML parser. This can be used as a standalone class!      |
-| orgile.php      | Version 20110418 | The Emacs Org-Mode (.org) file publishing tool, which uses classOrgile.php for it's file parsing. |
+| [[https://github.com/mashdot/orgile/blob/master/classOrgile.php][classOrgile.php]] | Version 20110918 | The rough Emacs Org-Mode (.org) file to HTML parser. This can be used as a standalone class!      |
+| [[https://github.com/mashdot/orgile/blob/master/orgile.php][orgile.php]]      | Version 20110418 | The Emacs Org-Mode (.org) file publishing tool, which uses classOrgile.php for it's file parsing. |
 | orgile.zip      | Current          | A working 'Orgile' which can simply be unzipped into your webspace to be used.                    |
 
 Please see: [[http://toshine.org/etc/orgile-emacs-org-mode-file-html-parser-php-publishing-tool/]] for details and a working example of how these are used together as "Orgile".
