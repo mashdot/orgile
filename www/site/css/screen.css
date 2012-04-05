@@ -1,0 +1,243 @@
+/*
+Time-stamp: <2011-11-27 Sun 16:00 screen.css>
+This CSS is orginally from http://toshine.org and written in 2011 by 'Mash (Thomas Herbert).
+*/
+
+/*--------------------------------------------------[ css reset ]----------*/
+ * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+    vertical-align: baseline;
+    list-style: none;
+    text-indent: 0;
+}
+
+/*--------------------------------------------------[ redefine ]----------*/
+html { font-size: 100%; } /*IE*/
+
+body {
+    font-family: Verdana, arial, geneva, sans-serif;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    color: #333;
+    background: #FFF;
+}
+
+/*--------------------------------------------------[ wrapper ]----------*/
+#wrapper {
+    width: 88.364em; /*972px*/
+    height: 90em;
+    margin: 1.636em auto 1.636em auto;
+    background: #FFF;
+}
+
+/*--------------------------------------------------[ header ]----------*/
+#header {
+    float: left;
+    width: 88.364em;
+    padding: 0em 0em 0.545em 0em;
+    border-bottom: dashed 1px #CCC;
+}
+
+#headerLine {
+    float: left;
+    width: 40em;
+    padding: 0em 0em 0em 0.818em;
+    text-align: left;
+}
+
+#headerMenu {
+    float: right;
+    width: 40em;
+    padding: 0em 0.818em 0em 0em;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+#headerMenuList li {
+    display: inline;
+    float: right;
+    padding: 0em 0em 0em 1.636em;
+}
+
+/*[ active navigation highlighting ]*/
+#articles #headerMenu li.articles a { font-weight: bold; }
+
+/*--------------------------------------------------[ columns ]----------*/
+#columnX {
+    float: left;
+    width: 63em;
+    padding: 0em 2.455em 0em 0.818em;
+    text-align: left;
+}
+
+
+#columnY {
+    float: left;
+    width: 19.545em;
+    padding: 0em 0.818em 0em 1.636em;
+    text-align: left;
+    border-left: dashed 1px #CCC;
+}
+
+#columnZ {
+    float: left;
+    width: 88.364em;
+    padding: 0em 2.455em 0em 0.818em;
+    text-align: left;
+}
+
+/*--------------------------------------------------[ footer ]----------*/
+#footer {
+    float: left;
+    width: 88.364em;
+    padding: 0.545em 0em 3em 0em;
+    border-top: dashed 1px #CCC;
+    text-align: center;
+}
+
+#footerList li {
+    display: inline;
+    padding: 0em 0em 0em 0.818em;
+}
+
+/*--------------------------------------------------[ content ]----------*/
+.content {
+    float: left;
+    width: 100%;
+    padding: 0em;
+    border-bottom: dashed 1px #CCC;
+}
+
+/*--------------------------------------------------[ typography ]----------*/
+h1 {
+    margin: 0em 0em 0em 0em;
+    padding: 0em;
+    font-size: 1.636em;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: #555;
+}
+
+h2 {
+    margin: 1em 0em 0em 0em;
+    padding: 0em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+h3 {
+    margin: 1em 0em 0em 0em;
+    padding: 0em;
+    font-size: 0.909em;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0em 0em 1em 0em;
+    padding: 0em;
+    font-size: 1em;
+}
+
+
+/*[ quotes, kudos: http://monc.se/kitchen/129/rendering-quotes-with-css ]*/
+q:before { content: '\201C'; }
+q:after { content: '\201D'; }
+q q:before { content: '\2018'; }
+q q:after { content: '\2019'; }
+
+/*[ blockquotes ]*/
+blockquote { margin: 0.818em 0.818em 0.818em 1.636em; }
+blockquote p:before { margin: 0em 0em 0em -0.545em; content: '\201C'; }
+blockquote p:after { content: '\201D'; }
+blockquote q:before { content: '\2018'; }
+blockquote q:after { content: '\2019'; }
+p.citeRef { margin: -1em 1.636em 1.636em 0em; font-size: 0.909em; text-align: right; }
+
+/*[ references ]*/
+.fnote {font-size: 0.909em;}
+sup.fnote a { font-weight: normal; color: #CCC; } /*[n]*/
+sup.fnote a:hover { color: #333; }
+.fnote sup { font-weight: normal; color: #777; } /*fnn*/
+
+/*[ preformatted ]*/
+pre {
+    margin: 1.636em 0em 1.636em 0em;
+    font-family: verdana, arial, geneva, sans-serif;
+    font-size: 1em;
+    line-height: 1.636em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-size: 0.909em;
+    font-family: monospace;
+    border-bottom: dotted 1px #CCC;
+    border-top: dotted 1px #CCC;
+}
+
+.monospace {
+ font-size: 1em;
+ font-family: monospace;
+}
+
+/*[ text variants ]*/
+i { font-style: italic; }
+b, strong { font-weight: bold; color: #555; }
+sub { vertical-align: sub; line-height: 1em; }
+sup { vertical-align: super; line-height: 1em; }
+s, strike, del  { text-decoration: line-through; }
+u, ins { text-decoration: underline; }
+
+.large { font-size: 2em; }
+.normal { font-size: 1em; }
+.small { font-size: 0.909em; }
+.reverse { unicode-bidi: bidi-override; direction: rtl; }
+.modified { clear: both; float: right; font-size: 0.909em; }
+.footer { float: left; margin: 0em; letter-spacing: 1px; }
+
+br { line-height: 1em; }
+hr { margin: 1em 0em 1em 0em; height: 0; border-top: dashed 1px #CCC; }
+
+/*--------------------------------------------------[ global links ]----------*/
+a:link { color: #777; text-decoration: none; }
+a:visited { color: #777; text-decoration: none; }
+a:hover { color: #333; text-decoration: none; }
+a:active { color: #777; text-decoration: none; }
+
+/*--------------------------------------------------[ colors ]----------*/
+.white { color: #FFF; }
+.red { color: #FF5500; }
+.blood { color: #910503; }
+.CCC { color: #CCC; }
+.EFE { color: #EFEFEF; }
+
+/*--------------------------------------------------[ lists ]----------*/
+ul.side li { margin: 0em 0em 0.818em 0em; list-style-type: none; }
+ul.clean li { margin: 0em 0em 0.818em 0.818em; list-style-type: none; }
+ul.bullist li { margin: 0em 0em 1.636em 1.636em; list-style-type: disc; }
+ol.numlist li { margin: 0em 0em 1.636em 0em; list-style-type: decimal; }
+li.basic { margin: 0em 0em 0.273em 1em; list-style-position: inside; list-style-type: none; text-indent: -1em; } /* used with classOrgile list */
+li.number { margin: 0em 0em 0.273em 0.818em; list-style-type: decimal; } /* used with classOrgile list */
+/*li.footnote { margin: 0em 0em 1.636em 0em; list-style-type: none; list-style-position: outside; }  bottom footnotes */
+
+/*--------------------------------------------------[ misc ]----------*/
+.imgLeft { float: left; margin: 0.273em 1.636em 0.818em 0em; }
+.imgRight { float: right; margin: 0.273em 0em 0.818em 1.636em; }
+.imgCenter { display: block; margin: 0em auto 0em auto; }
+.gototop { float: right; margin: 0em 0em 1em 0em; line-height: 1.636em; font-size: 0.909em; }
+
+/*--------------------------------------------------[ forms ]----------*/
+input.submit { border: solid 1px #666; background: #CCC; padding: 0.273em; }
+
+/*--------------------------------------------------[ readability ]----------*/
+.rdbWrapper { margin: 1em 0em -1em 0em; }

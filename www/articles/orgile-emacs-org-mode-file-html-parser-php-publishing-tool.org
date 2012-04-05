@@ -1,0 +1,58 @@
+#+Time-stamp: <2011-11-27 Sun 16:17 orgile-emacs-org-mode-file-html-parser-php-publishing-tool.org>
+#+TITLE: Orgile: an Emacs Org-mode file parser and publishing tool.
+#+AUTHOR: 'Mash (Thomas Herbert)
+#+DATE: <2011-11-27 Sun 13:34>
+#+DESCRIPTION: Orgile is an Emacs Org-mode file parser and publishing tool written in PHP. It uses classOrgile.php which is the rough Org-Mode file to HTML parser. Orgile actually validates as HTML5 and the feed as a valid Atom 1.0 feed.
+
+* Orgile: an Emacs Org-mode file parser and publishing tool.
+Orgile is an Emacs Org-mode file parser and publishing tool, which uses classOrgile a rough Org-Mode file to HTML parser. I use the word 'rough' because I am not much a of a developer.
+
+** Introduction.
+I wrote Orgile and classOrgile so that I could focus on writing articles in [[http://www.gnu.org/software/emacs/][Emacs]] and keeping my documents in their original [[http://orgmode.org/][Org-Mode]] format when uploading online. Orgile simply reads the .org files from the directory, and via classOrgile outputs the content to the browser as HTML. This article actually looks like this [[/articles/orgile-emacs-org-mode-file-html-parser-php-publishing-tool.org][plaintext .org file]]. The standard[1] Org-mode headers are used to create the article's published date, title, author and article link. Orgile can output the full article, the description, or a link list of post titles. Parsing can be done on-the-fly but I implemented [[http://pear.php.net/package/Cache_Lite/][PHP Cache_Lite]] which caches the parsed .org pages in a cache directory to be served by the browser for efficiency sake. This can be easily turned off within Orgile.
+
+This site [[http://toshine.org][toshine.org]] is built entirely with Orgile, plus some added content in the Orgile file and CSS. Orgile actually validates[2] as HTML5 and the feed as a valid Atom 1.0 feed.
+
+Orgile and classOrgile are free software: you can redistribute them and/or modify them under the terms of the [[http://www.gnu.org/licenses/][GNU General Public License]] as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. Currently Orgile and classOrgile can be downloaded in zip format, but if I get enough interest and other people want to help develop them further I can make them available via [[git-scm.com][Git]].
+
+** How it works.
+The main components of Orgile are <code>index.php</code> which calls the <code>orgile.php</code> function and <code>classOrgile.php</code> the .org file to HTML parser. <code>classOrgile.php</code> is not that clever and merely uses regex to convert the various Org-mode markup into HTML. Orgile uses a written URL to reference the .org file, but the physical filename and the title of the link displayed are independent of each other. Thus the URL and the title of the link displayed on your page need not be the same.
+
+Link: <code>Orgile: an Emacs Org-mode file parser and publishing tool.</code>
+
+URL:
+<code>/etc/orgile-emacs-org-mode-file-html-parser-php-publishing-tool/</code>
+
+Path:
+<code>/srv/www/toshine.org/www/etc/orgile-emacs-org-mode-file-html-parser-php-publishing-tool.org</code>
+
+
+I use [[http://www.lighttpd.net][lighttpd]] and so my rewrite rule looks like this:
+
+#+begin_src
+url.rewrite-once = (
+"^/([-a-zA-Z0-9]+)/$" => "/index.php?section=$1",
+"^/([-a-zA-Z0-9/]+)/([-a-zA-Z0-9/]+)$" => "/index.php?section=$1&article=$2"
+)
+#+end_src
+
+The valid Atom 1.0 feed is created automatically from the <code>articles</code> directory. You do not need to put anything in the <code>feed</code> directory itself, but the blank directory does need to exist. The feed URL would look like [[http://toshine.org/feed][http://toshine.org/feed]]
+
+** Install it yourself.
+Rather then me explaining everything in minute detail, grab Orgile and have a look at the three files. It should be fairly easy to see what is going on.
+
+Simply unzip <code>orgile.zip</code> into your wwwroot.
+
+Then you can see this guide as an example of a .org article in the <code>articles</code> directory. Read through <code>orgile.php</code> to configure it for your own needs, and have a look at <code>classOrgile.php</code> to see what Org-Mode markup is parsed to HTML.
+
+*Remember* you do need URL rewriting enabled and configured as mentioned above.
+
+You can [[/etc/files/orgile.zip][download orgile.zip here]].
+
+If you have any questions do contact me.
+
+-----
+
+** Footnotes.
+
+[1] Standard apart from the Emacs '#+Time-stamp:<>' header.
+[2] Apart from some citation errors: 'The cite attribute on the blockquote element is not supported by browsers yet.'
