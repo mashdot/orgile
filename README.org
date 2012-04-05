@@ -12,7 +12,7 @@ Orgile is an Emacs Org-mode file parser and publishing tool, which uses classOrg
 Please see: [[http://toshine.org/etc/orgile-emacs-org-mode-file-html-parser-php-publishing-tool/]] for details of how these are used together as "Orgile".
 
 * orgile.toshine.org
-A working installation can be seen here: [[http://orgile.toshine.org]].
+A working installation can be seen here: [[http://orgile.toshine.org/][http://orgile.toshine.org]].
 
 * Help!
 I really could do with some help with [[https://github.com/mashdot/orgile/blob/master/www/site/orgile/classOrgile.php][classOrgile.php]] as so far it is the only org-mode to HTML parser written in PHP.
